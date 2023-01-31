@@ -17,8 +17,8 @@ function App() {
         {/* Root =/= initial homepage */}
         <Route index element={<Home />} />
         {/* Sets the Home Component (page) as the Index aka initial page */}
-        <Route element={<Data />} />
-        <Route element={<Contact />} />
+        <Route path="/data" element={<Data />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     )
   )
