@@ -1,10 +1,11 @@
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet } from 'react-router-dom'
 
-import { Home } from './routes/Home'
-import { Data } from './routes/Data'
-import { Contact } from './routes/Contact'
+import { Home } from './routes/Home.jsx'
+import { Data } from './routes/Data.jsx'
+import { Contact } from './routes/Contact.jsx'
 
 function App() {
 
