@@ -1,8 +1,15 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigation } from 'react-router-dom'
 
 export const Data = () => {
     const dogUrl = useLoaderData()
+    const navigation = useNavigation()
+
+    if (navigation.state === "loading") {
+        return(
+            <h1>Loading...</h1>
+        )
+    }
 
     return (
         <div>
