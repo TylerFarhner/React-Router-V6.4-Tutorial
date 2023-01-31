@@ -1,10 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet } from 'react-router-dom'
 
 function App() {
 
-  const router = createBrowserRouter
+  // Create routes using familiar component tree structure
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      // Import Route components, This will be the 'root'
+      <Route path="/" element={<Root />}></Route>
+    )
+  )
 
   return (
     <div className="App">
@@ -24,6 +30,21 @@ function App() {
       </header>
     </div>
   );
+}
+
+// Structures everything related to routing, that isnt defining routes (i.e. navigation)
+const Root = () => {
+  return <>
+    <div>
+      <Link to="/">Home</Link>
+      <Link to="/data">Data</Link>
+    </div>
+
+    <div>
+      {/* Outlet is just a placeholder for all other routes outside of root */}
+      <Outlet />
+    </div>
+  </>
 }
 
 export default App;
