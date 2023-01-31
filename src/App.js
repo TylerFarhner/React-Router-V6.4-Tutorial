@@ -2,13 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet } from 'react-router-dom'
 
+import { Home } from './routes/Home'
+import { Data } from './routes/Data'
+import { Contact } from './routes/Contact'
+
 function App() {
 
   // Create routes using familiar component tree structure
   const router = createBrowserRouter(
     createRoutesFromElements(
       // Import Route components, This will be the 'root'
-      <Route path="/" element={<Root />}></Route>
+      <Route path="/" element={<Root />}>
+        {/* Root =/= initial homepage */}
+        <Route index element={<Home />} />
+        {/* Sets the Home Component (page) as the Index aka initial page */}
+        <Route index element={<Data />} />
+        <Route index element={<Contact />} />
+      </Route>
     )
   )
 
