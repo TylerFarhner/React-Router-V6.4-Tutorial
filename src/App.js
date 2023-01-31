@@ -1,11 +1,10 @@
 import React from 'react'
-import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet, RouterProvider } from 'react-router-dom'
 
-import Home from './routes/Home'
-import Data from './routes/Data';
-import Contact from './routes/Contact';
+import {Home} from './routes/Home'
+import {Data, dataLoader} from './routes/Data';
+import {Contact} from './routes/Contact';
 
 function App() {
 
@@ -17,7 +16,7 @@ function App() {
         {/* Root =/= initial homepage */}
         <Route index element={<Home />} />
         {/* Sets the Home Component (page) as the Index aka initial page */}
-        <Route path="/data" element={<Data />} />
+        <Route path="/data" element={<Data />} loader={dataLoader} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     )
